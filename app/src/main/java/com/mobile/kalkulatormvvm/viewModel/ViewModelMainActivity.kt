@@ -19,34 +19,68 @@ class ViewModelMainActivity : ViewModel() {
     var bil2Kosong = MutableLiveData<Boolean>()
 
     //fungsi
-    fun onTambah(bil1 : String, bil2 : String) {
+    fun onTambah(bil1: String, bil2: String) {
 
-        if (bil1.isEmpty())
-        {
+        if (bil1.isEmpty()) {
             bil1Kosong.value = true
-        }else if (bil2.isEmpty()){
+        } else if (bil2.isEmpty()) {
             bil2Kosong.value = true
-
-        }else{
-            repository.tambah(bil1,bil2)
+        } else {
+            repository.tambah(bil1, bil2)
             {
-
                 isHasil.value = it
-
             }
         }
-
     }
 
-    fun hasilSukses():LiveData<Hasil>{
+    fun onKurang(bil1: String, bil2: String) {
+        if (bil1.isEmpty()) {
+            bil1Kosong.value = true
+        } else if (bil2.isEmpty()) {
+            bil2Kosong.value = true
+        } else {
+            repository.kurang(bil1, bil2)
+            {
+                isHasil.value = it
+            }
+        }
+    }
+
+    fun onKali(bil1: String, bil2: String) {
+        if (bil1.isEmpty()) {
+            bil1Kosong.value = true
+        } else if (bil2.isEmpty()) {
+            bil2Kosong.value = true
+        } else {
+            repository.kali(bil1, bil2)
+            {
+                isHasil.value = it
+            }
+        }
+    }
+
+    fun onBagi(bil1: String, bil2: String) {
+        if (bil1.isEmpty()) {
+            bil1Kosong.value = true
+        } else if (bil2.isEmpty()) {
+            bil2Kosong.value = true
+        } else {
+            repository.bagi(bil1, bil2)
+            {
+                isHasil.value = it
+            }
+        }
+    }
+
+    fun hasilSukses(): LiveData<Hasil> {
         return isHasil
     }
 
-    fun bil1Kosong ():LiveData<Boolean>{
+    fun bil1Kosong(): LiveData<Boolean> {
         return bil1Kosong
     }
 
-    fun bil2Kosong ():LiveData<Boolean>{
+    fun bil2Kosong(): LiveData<Boolean> {
         return bil2Kosong
     }
 }

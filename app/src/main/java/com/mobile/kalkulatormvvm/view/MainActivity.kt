@@ -24,9 +24,20 @@ class MainActivity : AppCompatActivity() {
 
         //fungsi klik
         btnProses.setOnClickListener {
-
             //pangil viewmodel
             viewModel.onTambah(etBil1.text.toString(), etBil2.text.toString())
+        }
+
+        btnKurang.setOnClickListener {
+            viewModel.onKurang(etBil1.text.toString(), etBil2.text.toString())
+        }
+
+        btnKali.setOnClickListener {
+            viewModel.onKali(etBil1.text.toString(), etBil2.text.toString())
+        }
+
+        btnBagi.setOnClickListener {
+            viewModel.onBagi(etBil1.text.toString(), etBil2.text.toString())
         }
 
         //membuat fungsi attachobserve
