@@ -35,7 +35,7 @@
         android:inputType="number" />
 
     <Button
-        android:id="@+id/btnProses"
+        android:id="@+id/btnTambah"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etBil2"
@@ -50,17 +50,17 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etBil2"
-        android:layout_alignParentEnd="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/btnTambah"
         android:text="Kurang" />
 
     <Button
         android:id="@+id/btnKali"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnProses"
+        android:layout_below="@+id/btnTambah"
         android:layout_alignParentStart="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="10dp"
@@ -72,10 +72,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnKurang"
-        android:layout_alignParentEnd="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/btnKali"
         android:text="Bagi" />
 
     <ProgressBar
@@ -91,7 +91,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnKali"
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
         android:text="Hasil"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="@color/green"/>
 
 </RelativeLayout>

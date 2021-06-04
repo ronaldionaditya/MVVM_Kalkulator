@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(ViewModelMainActivity::class.java)
 
         //fungsi klik
-        btnProses.setOnClickListener {
+        btnTambah.setOnClickListener {
             //pangil viewmodel
             viewModel.onTambah(etBil1.text.toString(), etBil2.text.toString())
         }
